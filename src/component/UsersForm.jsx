@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { addUser } from "../action/userAction";
+import { connect, useDispatch} from "react-redux";
+import { v4 as uuid } from "uuid";
+
+
+
 
 function Userform(props) {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [gen, setGen] = useState("");
-	
+	const dispatch = useDispatch();
 
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		props.newUser({ name, email, gen });
+
+		let newUser = { name, email, gen, id: uuid() };
+		dispatch(addUser(newUser));
+		// props.AddNewUser({ name, email, gen });
 		setName("");
 		setEmail("");
 		setGen("");
@@ -44,7 +53,7 @@ function Userform(props) {
 			<Form.Group className="mb-3 " controlId="formBasicEmail">
 				<Form.Label className="color">Email address</Form.Label>
 				<Form.Control
-					type="text"
+					type="email"
 					value={email}
 					onChange={(e) => {
 						setEmail(e.target.value);
@@ -67,7 +76,15 @@ function Userform(props) {
 				 &#10004;
 			</Button>
 		</Form>
+
+		
 	);
+	
 }
 
-export default Userform;
+
+
+const mapDispatch = {
+	AddNewUser: addUser,
+};
+export default connect(null, mapDispatch)(Userform);

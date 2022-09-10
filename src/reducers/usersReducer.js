@@ -1,13 +1,46 @@
-let initialState= {
-   users: [
 
-    {name:"Eric ", email:"yefty@gmail", gen:"6", id:"yetwr"},
-    {name:"Kofi ", email:"yefty@gmail", gen:"5", id:"yetwr"},
-    {name:"Ama ", email:"yefty@gmail", gen:"4", id:"yetwr"},
-    {name:"Ekua ", email:"yefty@gmail", gen:"3", id:"yetwr"},
-],
+
+
+const initialState = {
+  users: [],
+ 
 };
 
-let usersReducer = (state= initialState, action)=>{}
+const userReducer = (state = initialState, action) => {
+ 
+  switch (action.type) {
+   
+    case "ADD_USER":
+        console.log(action.payload)
+      return { ...state, users: [...state.users, action.payload] };
 
-export default usersReducer;
+      case "EDIT_USER":
+       
+    const editedUsers = state.users.map((user)=>{
+      if(user.id === action.payload.newInfo.id){
+        return action.payload.newInfo
+      }
+      else return user
+    })
+    return { ...state, users: editedUsers };
+    
+
+
+
+
+
+
+      case "DELETE_USER":
+			const keepUsers = state.users.filter(
+				(user) => user.id !== action.payload
+			);
+			return { ...state, users:  keepUsers };
+			
+
+
+    default:
+      return state;
+  }
+};
+
+export default userReducer;

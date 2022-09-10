@@ -1,8 +1,6 @@
-import {createStore} from "redux"
-import usersReducer from "../reducers/usersReducer"
+import { legacy_createStore as createStore } from "redux";
+import userReducer from "../reducers/usersReducer";
 
+const store = createStore(userReducer);
 
-
-let Store= createStore(usersReducer);
-
-export default Store;
+export default store ;

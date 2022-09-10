@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import {Col, Modal, Button} from 'react-bootstrap'
 import Card from "react-bootstrap/Card";
 import EditUserForm from './EditUserForm';
+import {DeleteNewUser} from "../action/userAction"
+import {connect} from "react-redux"
 
 
 function UserCard(props) {
@@ -12,11 +14,11 @@ function UserCard(props) {
 
 
   const handleDelete = () => {
-		props.deleteUser(props.userInfo.id);
+		props.DeleteNewUser(props.userInfo.id);
 	};
 
   return (
-    <>
+    <div>
     <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton>
       <Modal.Title>Edit Your Info</Modal.Title>
@@ -39,8 +41,7 @@ function UserCard(props) {
         <Card.Subtitle className="mb-2 text-muted">
             <h6>Password:{props.userInfo.gen}</h6>
         </Card.Subtitle>
-        <Button 
-         title="Edit" onClick={handleShow} className="but" variant="primary" type="submit">
+        <Button title="Edit" onClick={handleShow} className="but" variant="primary" type="submit">
         <span>&#9999;</span>
      </Button>
         <Button onClick={handleDelete} title="Delete" className="but"  variant="primary" type="submit">
@@ -49,8 +50,12 @@ function UserCard(props) {
    
 </Card>
     </Col>
-    </>
+    </div>
   )
-}
+};
 
-export default UserCard
+const mapDispatch = {
+	DeleteNewUser,
+};
+export default connect(null, mapDispatch)(UserCard)
+  

@@ -1,16 +1,18 @@
-import Button from "react-bootstrap/Button";
+
 import { Container, Row } from "react-bootstrap";
 import UserCard from "./UserCard";
+import { connect } from 'react-redux';
+
 
 function User(props) {
 
 
 
 	return (
-		<>
+		<div>
         <Container>
         <Row>
-        {props.userData.map((item, index) => {
+        {props.users.map((item, index) => {
             return (
                <UserCard
                key={index}
@@ -22,8 +24,14 @@ function User(props) {
           })}
           </Row>
           </Container>
-		</>
+		</div>
 	);
 }
 
-export default User;
+const mapState = (state) => {
+	return {
+		users: state.users,
+	};
+};
+ export default connect(mapState)(User);
+
