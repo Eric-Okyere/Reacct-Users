@@ -5,9 +5,281 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.mydiv{
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  position: relative;
+  top: 30vh;
+
+}
+.mydivlog{
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  position: relative;
+ top: 5vh;
+}
+
+.cardsm{
+  background-color: black !important;
+  color: white;
+  width: 60vh !important;
+  height: 52vh !important;
+}
+.cardsm2{
+  background-color: black !important;
+  color: white;
+  width: 60vh !important;
+  height: 90vh !important;
+}
+
+.pic{
+  width: 12vh !important;
+  border-radius: 35px;
+position: relative;
+top: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pic {
+    animation: pic-spin infinite 20s linear;
+  }
+}
+
+
+
+@keyframes pic-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.smdiv{
+  display: flex;
+  
+}
+.smdiv>h1{
+  position: relative;
+  top: 10px;
+  left: 11px;
+}
+
+
+.topic{
+  margin-left: 20px !important
+  ;
+}
+
+.mybut{
+background-color: greenyellow !important;
+width: 35vh;
+color: black !important;
+position: relative;
+font-weight: bolder !important;
+border-radius: 20px !important;
+top: 5vh;
+margin-bottom: 10vh;
+border-color: white !important; 
+  
+
+}
+.mybut22{
+background-color: greenyellow !important;
+width: 35vh;
+color: black !important;
+position: relative;
+font-weight: bolder !important;
+border-radius: 20px !important;
+top: 4vh;
+margin-bottom: 10vh;
+border-color: white !important; 
+display: flex !important;
+  justify-content: space-between;
+
+}
+.mybut2{
+background-color: greenyellow !important;
+width: 35vh;
+color: black !important;
+position: relative;
+font-weight: bolder !important;
+border-radius: 20px !important;
+top: -5vh;
+margin-bottom: 10vh;
+border-color: white !important; 
+display: flex !important;
+  height: 9vh !important;
+
+}
+.mybut11{
+background-color: greenyellow !important;
+width: 35vh;
+color: black !important;
+position: relative;
+font-weight: bolder !important;
+border-radius: 20px !important;
+border-color: white !important; 
+display: flex !important;
+  height: 7vh !important;
+  justify-content: center ;
+  left: 8vh;
+
+}
+
+.butdiv{
+  
+  display: flex;
+  justify-content: center;
+}
+
+.dont{
+  position: relative;
+  left: 25px;
+}
+
+.contdiv{
+  display: flex !important;
+  justify-content: space-between;
+  width: 45vh;
+  position: relative;
+  top: -10vh;
+}
+.contdivalredy{
+  display: flex !important;
+  justify-content: space-between;
+  
+  position: relative;
+  top: 2vh;
+}
+.signinbut{
+  border-radius: 20px !important;
+  color: black;
+  position: relative;
+  top: -5px;
+  font-weight: bolder;
+  border-color: white;
+  background-color: greenyellow !important;
+}
+
+h1{
+  position: relative;
+  left: 20px;
+}
+
+::placeholder{
+  color: white !important;
+  font-weight: bolder;
+}
+
+
+.contdiv2{
+
+  display: flex;
+  justify-content: center;
+}
+
+.googleimg{
+  width: 30px;
+  height: 30px;
+}
+
+.kep-login-facebook {
+  font-family: Helvetica,sans-serif;
+  font-weight: 900 !important;
+  
+  color: black !important;
+  cursor: pointer;
+  display:flex;
+  position: relative !important;
+ top: -3vh !important;
+  text-decoration: none;
+  text-transform: lowercase !important;
+  
+  background-color: transparent !important;
+  border: none !important;
+  
+}
+
+.cardsmsignup{
+  background-color: black !important;
+  color: white;
+  width: 60vh !important;
+}
+
+.signupbut{
+  
+  background-color: yellowgreen !important;
+}
+ 
+.mydiv2{
+  position: relative;
+  top: 10vh;
+  display: flex;
+  justify-content: center;
+
+}
+
+.colsm{
+  background-color: black !important;
+  color: white !important;
+  margin: 5px;
+  width: 49vh;
+ position: relative;
+ top: 5vh;
+ left: -2vh;
+  
+}
+.cardlab{
+  color: white;
+  margin-left: 30px !important;
+  margin-top: 10px;
+}
+.but{
+  background-color: yellowgreen !important;
+  margin: 5px;
+  width: 30vh;
+}
+.col {
+  flex: none !important;
+ 
+}
+
+.cardbutdiv{
+  display: flex !important;
+  justify-content: center;
+}
+
+ .formdivmain{
+  display: flex !important;
+  justify-content: center !important;
+  position: relative;
+  left: -2vh;
+  top: 2vh;
+  
+} 
+.deleticon{
+  width: 3vh !important;
+}
+.formbt{
+  background-color: yellowgreen !important;
+}
+
+.btn-danger {
+ 
+  --bs-btn-bg: yellowgreen !important;
+  --bs-btn-border-color: yellowgreen !important;
+  position: relative;
+ top: 6vh;
+
+  
 }

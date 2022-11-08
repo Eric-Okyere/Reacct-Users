@@ -16,9 +16,6 @@ export const addUser = ( newUser) => {
   }
 
 
-
-
-
   export const DeleteNewUser =(user_id)=>{
     return {
     type :"DELETE_USER",

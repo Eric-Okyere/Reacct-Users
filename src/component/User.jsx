@@ -1,18 +1,20 @@
 
 import { Container, Row } from "react-bootstrap";
 import UserCard from "./UserCard";
-import { connect } from 'react-redux';
+import { useSelector } from "react-redux";
 
 
 function User(props) {
 
-
+  const  users  = useSelector((state) => {
+		return state.UsersReducer.users
+	});
 
 	return (
-		<div>
-        <Container>
+		<div >
+        <Container className='voc'>
         <Row>
-        {props.users.map((item, index) => {
+        {users.map((item, index) => {
             return (
                <UserCard
                key={index}
@@ -28,10 +30,6 @@ function User(props) {
 	);
 }
 
-const mapState = (state) => {
-	return {
-		users: state.users,
-	};
-};
- export default connect(mapState)(User);
+
+ export default User;
 

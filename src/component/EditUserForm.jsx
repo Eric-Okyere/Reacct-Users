@@ -1,27 +1,40 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import {editedUser} from "../action/userAction.js"
-import { useDispatch } from "react-redux";
+
+import {db} from "../Firebase/config"
+import { doc, updateDoc } from "firebase/firestore";
 
 
 
 function EditUserForm(props) {
 	const [name, setName] = useState(props.userInfo.name);
 	const [email, setEmail] = useState(props.userInfo.email);
-	const [gen, setGen] = useState(props.userInfo.gen);
-	const Mydispatch = useDispatch();
+	const [gen, setGen] = useState(props.userInfo.password);
+	
 
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async(e) => {
 		e.preventDefault();
-		Mydispatch(editedUser({ id: props.userInfo.id, name, email, gen }));
+		console.log({ id: props.userInfo.id, name, email, gen })
+		
+		try{
+			const washingtonRef = doc(db, "Students", props.userInfo.id);
 
-		// props.editUser(props.userInfo.id, { name, email, gen });
+
+await updateDoc(washingtonRef, { id: props.userInfo.id, name, email, gen });
+
+		}catch(e){console.log(e)}
+
+		
 		setName("");
 		setEmail("");
 		setGen("");
 		props.hide();
+
+
+		
+
 	};
 
 	return (
