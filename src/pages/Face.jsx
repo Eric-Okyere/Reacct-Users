@@ -20,7 +20,7 @@ function Face() {
       </Card.Text>
       <div className="butdiv"><Link to="/signin">  <Button className='mybut' >Log in </Button> </Link></div>
      
-      <div className='contdiv1'>
+      <div className='contdivlog'>
     <h6 className='dont'>Don't have an account? </h6>
      <Link to="/signup"><button className='signinbut'>Sign up</button></Link>
     </div>  

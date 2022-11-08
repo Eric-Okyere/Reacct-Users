@@ -154,6 +154,14 @@ display: flex !important;
   position: relative;
   top: -10vh;
 }
+
+.contdivlog{
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 45vh;
+  position: relative !important ;
+  top: 3vh;
+}
 .contdivalredy{
   display: flex !important;
   justify-content: space-between;
@@ -169,6 +177,9 @@ display: flex !important;
   font-weight: bolder;
   border-color: white;
   background-color: greenyellow !important;
+ 
+ 
+
 }
 
 h1{

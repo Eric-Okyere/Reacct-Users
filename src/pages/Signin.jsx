@@ -121,7 +121,7 @@ function Signin() {
 	  </Form>
 		  </Card.Text>
 		
-		  <div className='contdiv'>
+		  <div className='contdivlog'>
 		<h6 className='dont'>Don't have an account? </h6>
 		<Link to="/signup"><button className='signinbut'>Sign up</button></Link>
 		</div>  
